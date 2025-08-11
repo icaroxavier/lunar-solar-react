@@ -21,7 +21,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Recommended for DX */
+    /* DX */
     "resolveJsonModule": true,
     "isolatedModules": true
   },

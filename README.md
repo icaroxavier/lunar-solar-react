@@ -1,69 +1,91 @@
-# React + TypeScript + Vite
+# 🚀 Lunar Solar React Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A **marketing analytics dashboard** built with **React, Redux Toolkit, GraphQL (Apollo Client)**, and **Recharts**.  
+It simulates a KPI & data visualization platform for a marketing tech environment, inspired by the **Lunar Solar Group** Senior Frontend Engineer job description.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: [https://lunar-solar-react.vercel.app/](https://lunar-solar-react.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📸 Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**Dashboard Overview**  
+![Dashboard Screenshot](docs/dashboard-screenshot.png)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 18** + **Vite** – Modern and fast dev environment.
+- **Redux Toolkit** – Global state management for KPIs and launches.
+- **Apollo Client** – GraphQL integration with SpaceX public API.
+- **Recharts** – Responsive charts and KPIs visualization.
+- **TypeScript** – Strict typing for maintainability.
+- **ESLint + Prettier** – Code quality and formatting.
+- **Vercel** – Deployment & hosting.
+
+---
+
+## 📂 Project Structure
+
+```plaintext
+src/
+ ├── components/       # Reusable UI components (KpiCard, LaunchChart, Dashboard)
+ ├── graphql/          # Apollo Client setup & GraphQL queries
+ ├── store/            # Redux Toolkit slices, hooks, and thunks
+ ├── App.tsx           # Application entry point
+ └── main.tsx          # React root with Providers (Redux + Apollo)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔑 Features
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **KPI Cards** – Total launches, unique rockets.
+- **Launch Chart** – Launches grouped by year.
+- **GraphQL Data Fetching** – SpaceX public API.
+- **Redux Integration** – Centralized data & loading/error states.
+- **TypeScript Strict Mode** – Strong typing for safer code.
+- **Performance Optimization** – Memoized selectors & components.
+- **Responsive Layout** – Works on desktop & mobile.
+
+---
+
+## 📦 Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/icaroxavier/lunar-solar-react.git
+cd lunar-solar-react
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+---
+
+## 🔍 Environment Variables
+
+No private keys are required for this demo, but you can change the GraphQL endpoint in  
+`src/graphql/client.ts`:
+
+```ts
+uri: 'https://spacex-production.up.railway.app/'
+```
+
+---
+
+## 👤 Author
+
+**Ícaro Xavier**  
+Frontend Engineer | React, Redux, GraphQL, UI/UX  
+[LinkedIn](https://www.linkedin.com/in/icaroxavier/) • [GitHub](https://github.com/icaroxavier)
