@@ -3,7 +3,8 @@
 A **marketing analytics dashboard** built with **React, Redux Toolkit, GraphQL (Apollo Client)**, and **Recharts**.  
 It simulates a KPI & data visualization platform for a marketing tech environment, inspired by the **Lunar Solar Group** Senior Frontend Engineer job description.
 
-🔗 **Live Demo**: [https://lunar-solar-react.vercel.app/](https://lunar-solar-react.vercel.app/)
+🔗 **Live Demo**: [https://lunar-solar-react.vercel.app/](https://lunar-solar-react.vercel.app/)  
+📚 **Storybook**: [https://lunar-solar-react-storybook.vercel.app/](https://lunar-solar-react-storybook.vercel.app/)
 
 ---
 

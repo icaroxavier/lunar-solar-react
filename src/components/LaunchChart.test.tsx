@@ -1,19 +1,31 @@
-// src/components/LaunchChart.test.tsx
-import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
-import * as stories from './LaunchChart.stories';
+import LaunchChart from './LaunchChart';
+import type { Launch } from '../store/dashboardSlice';
 
-const { Default, EmptyData } = composeStories(stories);
+describe('LaunchChart', () => {
+  it('renders with data', async () => {
+    const launches: Launch[] = [
+      { missionName: 'CRS-20', rocketName: 'Falcon 9', launchDate: '2020-03-07' },
+      { missionName: 'Transporter-1', rocketName: 'Falcon 9', launchDate: '2021-01-24' }
+    ];
 
-describe('LaunchChart (stories)', () => {
-  it('renders with data', () => {
-    const { container } = render(<Default />);
-    // basic smoke test: Recharts renders an SVG
+    const { container } = render(
+      <div style={{ width: 800, height: 320 }}>
+        <LaunchChart launches={launches} />
+      </div>
+    );
+
+    await new Promise((r) => setTimeout(r, 0));
     expect(container.querySelector('svg')).toBeTruthy();
   });
 
-  it('renders empty state', () => {
-    const { container } = render(<EmptyData />);
-    expect(container.querySelector('svg')).toBeTruthy(); // still renders axes
+  it('renders empty data', async () => {
+    const { container } = render(
+      <div style={{ width: 800, height: 320 }}>
+        <LaunchChart launches={[]} />
+      </div>
+    );
+    await new Promise((r) => setTimeout(r, 0));
+    expect(container.querySelector('svg')).toBeTruthy();
   });
 });

@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "composite": true,                        
+    "jsx": "react-jsx",
+    "types": ["vitest/globals", "@testing-library/jest-dom", "react", "react-dom"]
+  },
+  "include": ["src/**/*.test.tsx", "src/**/*.test.ts", "src/test/setup.ts"]
+}
