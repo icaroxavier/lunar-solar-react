@@ -3,9 +3,12 @@ import dashboardReducer from './dashboardSlice';
 
 export const store = configureStore({
   reducer: {
-    dashboard: dashboardReducer
-  }
+    dashboard: dashboardReducer,
+  },
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = {
+  dashboard: import('./dashboardSlice').DashboardState;
+};
+
 export type AppDispatch = typeof store.dispatch;

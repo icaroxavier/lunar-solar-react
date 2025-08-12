@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface Launch {
   missionName: string;
@@ -12,7 +12,7 @@ export interface KpiData {
   value: number;
 }
 
-interface DashboardState {
+export interface DashboardState {
   kpis: KpiData[];
   launches: Launch[];
   loading: boolean;
@@ -23,11 +23,11 @@ const initialState: DashboardState = {
   kpis: [],
   launches: [],
   loading: false,
-  error: null
+  error: null,
 };
 
 const dashboardSlice = createSlice({
-  name: "dashboard",
+  name: 'dashboard',
   initialState,
   reducers: {
     setKpis(state, action: PayloadAction<KpiData[]>) {
@@ -41,8 +41,8 @@ const dashboardSlice = createSlice({
     },
     setError(state, action: PayloadAction<string | null>) {
       state.error = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const { setKpis, setLaunches, setLoading, setError } = dashboardSlice.actions;
