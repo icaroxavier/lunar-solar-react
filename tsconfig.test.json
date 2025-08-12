@@ -1,9 +1,13 @@
 {
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
-    "composite": true,                        
+    "composite": true,
     "jsx": "react-jsx",
-    "types": ["vitest/globals", "@testing-library/jest-dom", "react", "react-dom"]
+    "types": ["vitest/globals", "@testing-library/jest-dom", "react", "react-dom"],
+    "noEmit": true,
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.test.tsbuildinfo"
   },
-  "include": ["src/**/*.test.tsx", "src/**/*.test.ts", "src/test/setup.ts"]
+  "references": [{ "path": "./tsconfig.app.json" }],
+  "include": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/test/setup.ts"],
+  "exclude": ["node_modules", "dist", "coverage"]
 }
